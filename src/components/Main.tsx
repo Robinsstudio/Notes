@@ -1,12 +1,11 @@
 import React from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import Homepage from './Homepage';
+import Note from './Note';
 
 const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
 		container: {
-			flex: 1,
-			margin: theme.spacing(0, 2)
+			flex: 1
 		}
 	}),
 );
@@ -16,7 +15,7 @@ function Main() {
 
 	return (
 		<div className={classes.container}>
-			<Homepage />
+			<Note />
 		</div>
 	);
 }
