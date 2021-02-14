@@ -1,27 +1,24 @@
 import React from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import Header from './components/Header';
-import Main from './components/Main';
+import Homepage from './Homepage';
 
 const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
 		container: {
-			display: 'flex',
-			flexDirection: 'column',
-			height: '100vh'
+			flex: 1,
+			margin: theme.spacing(0, 2)
 		}
 	}),
 );
 
-function App() {
+function Main() {
 	const classes = useStyles();
 
 	return (
 		<div className={classes.container}>
-			<Header />
-			<Main />
+			<Homepage />
 		</div>
 	);
 }
 
-export default App;
+export default Main;
