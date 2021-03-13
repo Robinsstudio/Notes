@@ -1,6 +1,8 @@
 import React from 'react';
 import { Button, Container, TextField, Typography } from '@material-ui/core';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import { useSelector } from 'react-redux';
+import { selectDate } from '../store/selectors';
 
 const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
@@ -17,12 +19,14 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 function Note() {
+	const date = useSelector(selectDate);
+
 	const classes = useStyles();
 
 	return (
 		<Container className={classes.container} maxWidth="sm">
 			<Typography className={classes.title} variant="h4">
-				{ new Date().toLocaleDateString('fr-FR') }
+				{ date.toLocaleDateString('fr-FR') }
 			</Typography>
 			<TextField label="Note" variant="outlined" rows={4} multiline fullWidth/>
 			<Button className={classes.button} variant="contained" color="primary">Enregistrer</Button>
