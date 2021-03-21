@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme: Theme) =>
 	}),
 );
 
-function Note() {
+function Note(): JSX.Element {
 	const date = useSelector(selectDate);
 	const note = useSelector(selectNote);
 

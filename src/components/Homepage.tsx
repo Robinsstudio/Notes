@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme: Theme) =>
 	}),
 );
 
-function Homepage() {
+function Homepage(): JSX.Element {
 	const classes = useStyles();
 
 	return (

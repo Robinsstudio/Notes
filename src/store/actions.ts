@@ -5,13 +5,17 @@ export enum ActionType {
 	UPDATE_NOTE = 'UPDATE_NOTE'
 }
 
+function updateDate(date: Date): { type: ActionType.UPDATE_DATE, payload: Date } {
+	return createAction(ActionType.UPDATE_DATE, date);
+}
+
+function updateNote(note: string): { type: ActionType.UPDATE_NOTE, payload: string } {
+	return createAction(ActionType.UPDATE_NOTE, note);
+}
+
 export const Actions = {
-	updateDate: (date: Date) => {
-		return createAction(ActionType.UPDATE_DATE, date);
-	},
-	updateNote: (note: string) => {
-		return createAction(ActionType.UPDATE_NOTE, note);
-	}
+	updateDate,
+	updateNote
 };
 
-export type Action = ReturnType<typeof Actions.updateDate | typeof Actions.updateNote>;
+export type Action = ReturnType<typeof updateDate | typeof updateNote>;

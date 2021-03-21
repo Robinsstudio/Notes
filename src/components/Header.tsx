@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme: Theme) =>
 	}),
 );
 
-function Header() {
+function Header(): JSX.Element {
 	const [dialogOpen, setDialogOpen] = useState(false);
 
 	const classes = useStyles();

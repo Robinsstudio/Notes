@@ -26,7 +26,7 @@ interface DatePickerDialogProps {
 	onClose: () => void;
 }
 
-function DatePickerDialog(props: DatePickerDialogProps) {
+function DatePickerDialog(props: DatePickerDialogProps): JSX.Element {
 	const initialDate = useSelector(selectDate);
 	const [date, setDate] = useState(initialDate);
 	const dispatch = useDispatch();

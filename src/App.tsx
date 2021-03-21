@@ -1,9 +1,9 @@
 import React from 'react';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import { createStyles, makeStyles } from '@material-ui/core/styles';
 import Header from './components/Header';
 import Main from './components/Main';
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
 	createStyles({
 		container: {
 			display: 'flex',
@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme: Theme) =>
 	}),
 );
 
-function App() {
+function App(): JSX.Element {
 	const classes = useStyles();
 
 	return (
