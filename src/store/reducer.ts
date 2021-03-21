@@ -6,7 +6,12 @@ export function reducer(state: State = initialState, action: Action): State {
 		case ActionType.UPDATE_DATE:
 			return {
 				...state,
-				date: action.date
+				date: action.payload
+			};
+		case ActionType.UPDATE_NOTE:
+			return {
+				...state,
+				note: action.payload
 			};
 		default:
 			return state;

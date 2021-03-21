@@ -6,8 +6,8 @@ import { DatePicker } from '@material-ui/pickers';
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
 import { useDispatch, useSelector } from 'react-redux';
-import { ActionType } from '../store/actions';
 import { selectDate } from '../store/selectors';
+import { Actions } from '../store/actions';
 
 const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
@@ -38,10 +38,7 @@ function DatePickerDialog(props: DatePickerDialogProps) {
 	}
 
 	function dispatchDate() {
-		dispatch({
-			type: ActionType.UPDATE_DATE,
-			date
-		});
+		dispatch(Actions.updateDate(date));
 
 		props.onClose();
 	}
