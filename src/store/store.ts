@@ -20,8 +20,16 @@ export function ofType<T extends ActionType, A extends Action & { type: T }>(typ
 	};
 }
 
-export function createAction<T extends ActionType>(type: T): { type: T };
-export function createAction<T extends ActionType, P>(type: T, payload: P): { type: T, payload: P };
+export interface TypedAction<T extends ActionType> {
+	type: T;
+}
+
+export interface TypedActionWithPayload<T extends ActionType, P> extends TypedAction<T> {
+	payload: P;
+}
+
+export function createAction<T extends ActionType>(type: T): TypedAction<T>;
+export function createAction<T extends ActionType, P>(type: T, payload: P): TypedActionWithPayload<T, P>;
 
 export function createAction<T extends ActionType, P>(type: T, payload?: P): { type: T, payload?: P } {
 	return {
